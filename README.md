@@ -14,6 +14,10 @@
 
 ### 3rd Commit
 
+- Filter data to show rows dated from 1970-01-01 to 2010-12-31.
+
+- Created /six_month_avg plot to show the 6 month average "Open" price.
+
 ### 4th Commit
 
 ### 5th Commit
