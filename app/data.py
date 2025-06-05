@@ -10,7 +10,12 @@ def display_dataframe():
     
     try:
         # Read the file into a DataFrame
-        df = pd.read_csv(file_path, sep='\t', engine='python')  # Adjust separator if needed
+        df = pd.read_csv(file_path, header=0,names=[
+            "Date", "Open", "High", "Low", "Close", "Volume", "OpenInt"
+        ])
+
+        # Drop the "OpenInt" column
+        df = df.drop(columns=["OpenInt"])
         
         # Convert DataFrame to HTML
         df_html = df.to_html(classes='table table-striped', index=False)
@@ -26,7 +31,7 @@ def display_dataframe():
         </head>
         <body>
             <div class="container mt-4">
-                <h1 class="text-center">Johnson & Johnson DataFrame</h1>
+                <h1 class="text-center">JNJ DataFrame</h1>
                 {{ table|safe }}
             </div>
         </body>

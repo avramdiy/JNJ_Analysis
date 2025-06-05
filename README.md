@@ -10,6 +10,8 @@
 
 ### 2nd Commit
 
+- Adjusted string values to load per attribute column, dropped "OpenInt" column.
+
 ### 3rd Commit
 
 ### 4th Commit
