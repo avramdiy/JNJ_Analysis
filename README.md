@@ -23,3 +23,5 @@
 - Added the 6 month average "Close" price plot to the same route.
 
 ### 5th Commit
+
+- Added the 6 month average plots for "High" and "Low".

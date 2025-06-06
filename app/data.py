@@ -79,12 +79,20 @@ def six_month_avg():
         
         # Calculate 6-month rolling average for "Close" price
         df['6_Month_Avg_Close'] = df['Close'].rolling(window=6).mean()
+        
+        # Calculate 6-month rolling average for "High" price
+        df['6_Month_Avg_High'] = df['High'].rolling(window=6).mean()
+        
+        # Calculate 6-month rolling average for "Low" price
+        df['6_Month_Avg_Low'] = df['Low'].rolling(window=6).mean()
 
-        # Plot the 6-month average "Open" and "Close" prices
+        # Plot the 6-month average "Open", "Close", "High", and "Low" prices
         plt.figure(figsize=(10, 6))
         plt.plot(df.index, df['6_Month_Avg_Open'], label='6-Month Avg Open', color='blue')
         plt.plot(df.index, df['6_Month_Avg_Close'], label='6-Month Avg Close', color='green')
-        plt.title('6-Month Average Prices (Open and Close)')
+        plt.plot(df.index, df['6_Month_Avg_High'], label='6-Month Avg High', color='orange')
+        plt.plot(df.index, df['6_Month_Avg_Low'], label='6-Month Avg Low', color='red')
+        plt.title('6-Month Average Prices (Open, Close, High, and Low)')
         plt.xlabel('Date')
         plt.ylabel('Average Price')
         plt.legend()
@@ -106,7 +114,7 @@ def six_month_avg():
         </head>
         <body>
             <div class="container mt-4">
-                <h1 class="text-center">6-Month Average Prices (Open and Close)</h1>
+                <h1 class="text-center">6-Month Average Prices (Open, Close, High, and Low)</h1>
                 <img src="data:image/png;base64,{{ plot_url }}" class="img-fluid" />
             </div>
         </body>
